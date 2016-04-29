@@ -1088,6 +1088,7 @@
             if (v !== false) {
                 if (this._o.bound) {
                     removeEvent(document, 'click', this._onClick);
+                    removeEvent(document, 'touchstart', this._onClick);
                 }
                 this.el.style.position = 'static'; // reset
                 this.el.style.left = 'auto';
@@ -1112,6 +1113,7 @@
             if (this._o.field) {
                 removeEvent(this._o.field, 'change', this._onInputChange);
                 if (this._o.bound) {
+                    removeEvent(this._o.trigger, 'touchstart', this._onInputClick);
                     removeEvent(this._o.trigger, 'click', this._onInputClick);
                     removeEvent(this._o.trigger, 'focus', this._onInputFocus);
                     removeEvent(this._o.trigger, 'blur', this._onInputBlur);
