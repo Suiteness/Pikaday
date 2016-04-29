@@ -1074,6 +1074,7 @@
                 this.draw();
                 if (this._o.bound) {
                     addEvent(document, 'click', this._onClick);
+                    addEvent(document, 'touchstart', this._onClick);
                     this.adjustPosition();
                 }
                 if (typeof this._o.onOpen === 'function') {
